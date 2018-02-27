@@ -4,9 +4,8 @@ from unittest import TestCase
 def linear_search(sequence, target):
     """Algorithm 	Best case 	Expected 	Worst case"""
     """Linear search 	O(1) 	O(N) 	O(N)"""
-    for index, item in enumerate(sequence):
-        if item == target:
-            return index
+    # instead of range len and zip , enumerate(sequence)
+    # enumerate(sequence)
     indexes = [index for value, index in zip(sequence, range(len(sequence)))
                if value == target]
     if len(indexes) is 0:
