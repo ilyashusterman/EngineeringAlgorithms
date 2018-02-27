@@ -8,11 +8,12 @@ def linear_search(sequence, target):
         if item == target:
             return index
     indexes = [index for value, index in zip(sequence, range(len(sequence)))
-               if value == target][0]
+               if value == target]
     if len(indexes) is 0:
         return None
     else:
-        return indexes[0]
+        first_found = indexes[0]
+        return first_found
     # value_found = filter(lambda x: x == target, sequence)
     # Second slower option
 
@@ -43,11 +44,13 @@ class TestSearchAlgorithms(TestCase):
     def test_linear_search(self):
         index_found = linear_search([0, 5, 7, 10, 15], 0)
         self.assertEqual(index_found, 0)
+        none_value = linear_search([0, 5, 7, 10, 15], 2)
+        self.assertIsNone(none_value)
         index_found = linear_search([0, 5, 7, 10, 15], 5)
         self.assertEqual(index_found, 1)
 
     def test_binary_search(self):
         index_found = binary_search([0, 5, 7, 10, 15], 15)
         self.assertEqual(index_found, 4)
-        none_value =  binary_search([0, 5, 7, 10, 15], 6)
+        none_value = binary_search([0, 5, 7, 10, 15], 6)
         self.assertIsNone(none_value)
