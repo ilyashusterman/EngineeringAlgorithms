@@ -2,6 +2,8 @@ from unittest import TestCase
 
 
 def bubble_sort(bad_list):
+    """Algorithm 	Best case 	Expected 	Worst case"""
+    """Bubble sort 	  O(N) 	     O(N) 	        O(N^2)"""
     length = len(bad_list) - 1
     sorted = False
 
