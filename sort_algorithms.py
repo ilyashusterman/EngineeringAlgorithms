@@ -5,18 +5,19 @@ def bubble_sort(bad_list):
     """Algorithm 	Best case 	Expected 	Worst case"""
     """Bubble sort 	  O(N) 	     O(N) 	        O(N^2)"""
     length = len(bad_list) - 1
-    sorted = False
+    is_list_sorted = False
 
-    while not sorted:
-        sorted = True
+    while not is_list_sorted:
+        is_list_sorted = True
         for i in range(length):
             if bad_list[i] > bad_list[i + 1]:
-                sorted = False
+                is_list_sorted = False
                 bad_list[i], bad_list[i + 1] = bad_list[i + 1], bad_list[i]
     return bad_list
 
 
 class TestSortAlgorithms(TestCase):
+
     def test_bubble_sort(self):
         sorted_collection = bubble_sort([0, 5, 3, 2, 2])
         self.assertEqual(sorted_collection, [0, 2, 2, 3, 5])
